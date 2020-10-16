@@ -22,6 +22,11 @@ export class ProductService {
     // build url based on category id
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
 
+    return this.getProducts(searchUrl);
+  }
+
+  // tslint:disable-next-line:typedef
+  private getProducts(searchUrl: string) {
     return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
       map(response => response._embedded.products)
     );
@@ -31,6 +36,13 @@ export class ProductService {
     return this.httpClient.get<GetResponseCategory>(this.categoryUrl).pipe(
       map(response => response._embedded.category)
     );
+  }
+
+  searchProducts(theKeyword: string): Observable<Product[]> {
+
+    // build url based on the keyword
+    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
+    return this.getProducts(searchUrl);
   }
 }
 
