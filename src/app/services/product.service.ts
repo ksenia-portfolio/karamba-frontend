@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Product} from '../common/product';
@@ -16,8 +16,10 @@ export class ProductService {
   private baseUrl = 'http://localhost:8080/products';
   private categoryUrl = 'http://localhost:8080/category';
 
-  constructor(private httpClient: HttpClient) { }
-  getProductList(theCategoryId: number): Observable<Product[]>{
+  constructor(private httpClient: HttpClient) {
+  }
+
+  getProductList(theCategoryId: number): Observable<Product[]> {
 
     // build url based on category id
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
@@ -44,14 +46,38 @@ export class ProductService {
     const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
     return this.getProducts(searchUrl);
   }
+
+  getProduct(theProductId: number): Observable<Product> {
+    //build URL based on product id
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+    return this.httpClient.get<Product>(productUrl);
+  }
+
+  getProductListPaginate(thePage: number,
+                         thePageSize: number,
+                         theCategoryId: number): Observable<GetResponseProducts> {
+
+    // build url based on category id
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
+                      + `&page=${thePage}&size=${thePageSize}`;
+    return this.httpClient.get<GetResponseProducts>(searchUrl);
+  }
+
 }
 
-interface GetResponseProducts{
+interface GetResponseProducts {
   _embedded: {
     products: Product[];
   };
+  page: {
+  size: number,
+  totalElements: number,
+  totalPages: number,
+  number: number
+};
 }
-interface GetResponseCategory{
+
+interface GetResponseCategory {
   _embedded: {
     category: Category[];
   };
