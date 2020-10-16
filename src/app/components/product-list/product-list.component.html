@@ -1,4 +1,3 @@
-
   <!-- MAIN CONTENT-->
   <div class="main-content">
     <div class="section-content section-content-p30">
@@ -29,22 +28,19 @@
           <!--PAGINATION-->
         <div class="footer-pagination">
           <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-              <div class="col-md-9" style="padding-left: 30%">
+            <div class="col-md-4"></div>
+
+              <div class="col-md-5">
 
                 <ngb-pagination [(page)]="thePageNumber"
                                 [pageSize]="thePageSize"
                                 [collectionSize]="theTotalElements"
                                 (pageChange)="listProducts()">
-
                 </ngb-pagination>
 
             </div>
 
           </div>
-
-        </div>
 
     </div>
   </div>

@@ -16,9 +16,10 @@ export class ProductListComponent implements OnInit {
   searchMode = false;
 
   thePageNumber = 1;
-  thePageSize = 10;
+  thePageSize = 12;
   theTotalElements = 0;
 
+  previousKeyword = null;
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute) {
@@ -43,12 +44,16 @@ export class ProductListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   private handleSearchProducts() {
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword');
+    if(this.previousKeyword !== theKeyword){
+      this.thePageNumber = 1;
+    }
+    this.previousKeyword = theKeyword;
+
+
     // searching for products through the keyword from the search bar
-    this.productService.searchProducts(theKeyword).subscribe(
-      data => {
-        this.products = data;
-      }
-    );
+    this.productService.searchProductsPaginate(this.thePageNumber - 1,
+                                                      this.thePageSize,
+                                                      theKeyword).subscribe(this.processResult());
   }
 
   // tslint:disable-next-line:typedef

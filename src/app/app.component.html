@@ -16,7 +16,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#" style="color: black">Home</a></li>
+        <li class="active"><a routerLink="/products" routerLinkActive="active-link" style="color: black">Home</a></li>
 
         <!--dropdown nav buttons-->
         <li class="dropdown">
@@ -53,7 +53,9 @@
         <li><a href="#"><span class="glyphicon glyphicon-user" style="color: black"></span><span style="color: black">Your Account</span></a></li>
 
       <!-- Cart -->
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="color: black"></span><span style="color: black"> Cart</span></a></li>
+        <li>
+          <app-cart-status></app-cart-status>
+        </li>
       </ul>
     </div>
   </div>
@@ -63,9 +65,9 @@
 <!-- SLIDES -->
 <br>
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-1">
   </div>
-  <div class="col-sm-8">
+  <div class="col-sm-10">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -112,7 +114,6 @@
       </a>
     </div>
     <!-- end of slides-->
-    <br>
     <router-outlet></router-outlet>
     <br>
   </div>

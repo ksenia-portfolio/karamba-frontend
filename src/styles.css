@@ -97,6 +97,10 @@ h6{
 a{
   display:inline-block
 }
+.btn-search:hover{
+
+  background-color: #0c505b;
+}
 
 a:active,a:focus,a:hover{
   text-decoration:none;

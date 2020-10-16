@@ -1,7 +1,7 @@
 <div class="navbar-form navbar-left" >
-  <input #myInput type="text" class="form-control" placeholder="Search for anything" style="width: 500px"
+  <input #myInput type="text" class="form-control" placeholder="Search for anything" style="width: 400px"
          (keyup.enter)="doSearch(myInput.value)"/>
-  <button  (click)="doSearch(myInput.value)" class="btn btn-info" style="background: #0c505b">
+  <button  (click)="doSearch(myInput.value)" jstyle="background: #0c505b; padding: 5px 7px; margin-left: 5px; border-radius: 5px; border: midnightblue 2px solid">
     <span class="glyphicon glyphicon-search"></span> Search
   </button>
 </div>
