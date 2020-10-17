@@ -32,7 +32,7 @@ export class CartService {
     this.computeCartTotals();
   }
 
-  private computeCartTotals() {
+  computeCartTotals() {
     let totalPriceValue = 0;
     let totalQuantityValue = 0;
     for (const currentCartItem of this.cartItems){

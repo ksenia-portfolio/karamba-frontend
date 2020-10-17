@@ -1,1 +1,41 @@
-<p>cart-details works!</p>
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div *ngIf="cartItems.length > 0">
+      <table class="table table-bordered">
+        <tr>
+          <th width="20%">Image</th>
+          <th width="50%">Details</th>
+          <th width="30%"></th>
+        </tr>
+
+        <tr *ngFor="let tempCartItem of cartItems">
+          <td>
+            <img src="{{tempCartItem.imageUrl}}" class="img-responsive" width="150px" style="padding: 10px; margin-left: 20%"/>
+          </td>
+          <td>
+            <p style="margin-left: 10px">{{tempCartItem.name}}</p>
+            <p style="margin-left: 10px">{{tempCartItem.unitPrice | currency: 'EUR'}}</p>
+          </td>
+          <td>
+            <div class = "items">
+              <label style="margin-left: 10px"> Quantity: </label>{{tempCartItem.quantity}}
+            </div>
+            <p class="mt-2" style="margin-left: 10px">Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'EUR'}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td style="font-weight: bold">
+            <p style="margin-left: 10px">Total Price: {{totalPrice | currency: 'EUR'}}</p>
+          </td>
+        </tr>
+
+      </table>
+      </div>
+      <div *ngIf="cartItems.length==0" class="alert alert-info" style="text-align: center"><strong>Your cart is empty</strong></div>
+      <br>
+      <a routerLink="/products" class="active-link">Back to Main Page</a>
+    </div>
+  </div>
+</div>
