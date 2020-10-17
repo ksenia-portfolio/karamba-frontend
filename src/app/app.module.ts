@@ -15,8 +15,10 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import {FormsModule} from '@angular/forms';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
+  {path: 'account', component: AccountComponent},
   {path: 'confirmation', component: ConfirmationComponent},
   {path: 'contact', component: ContactFormComponent},
   {path: 'checkout', component: CheckoutComponent},
@@ -40,7 +42,8 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     ContactFormComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    AccountComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
