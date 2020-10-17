@@ -12,8 +12,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import {FormsModule} from '@angular/forms';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 const routes: Routes = [
+  {path: 'confirmation', component: ConfirmationComponent},
+  {path: 'contact', component: ContactFormComponent},
+  {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
   {path: 'search/:keyword', component: ProductListComponent},
@@ -32,13 +38,16 @@ const routes: Routes = [
     ProductDetailsComponent,
     CartStatusComponent,
     CartDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ContactFormComponent,
+    ConfirmationComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

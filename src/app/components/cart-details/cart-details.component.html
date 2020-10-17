@@ -28,14 +28,15 @@
           <td colspan="2"></td>
           <td style="font-weight: bold">
             <p style="margin-left: 10px">Total Price: {{totalPrice | currency: 'EUR'}}</p>
+            <a routerLink="/checkout" class="btn btn-primary" style="margin-left: 10px">Checkout</a>
           </td>
         </tr>
 
       </table>
       </div>
-      <div *ngIf="cartItems.length==0" class="alert alert-info" style="text-align: center"><strong>Your cart is empty</strong></div>
-      <br>
-      <a routerLink="/products" class="active-link">Back to Main Page</a>
+       <div *ngIf="cartItems.length==0" class="alert alert-info" style="text-align: center"><strong>Your cart is empty</strong>
+       </div>
+
     </div>
   </div>
 </div>
