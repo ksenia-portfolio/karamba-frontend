@@ -97,9 +97,16 @@ h6{
 a{
   display:inline-block
 }
-.btn-search:hover{
+.btn-search{
+  color: black;
+  border-radius: 10px;
+  border: #0b3c56 2px solid
+}
 
-  background-color: #0c505b;
+.btn-search:hover{
+  color: white;
+  background-color: #8dcdef;
+  border: white 2px solid;
 }
 
 a:active,a:focus,a:hover{
@@ -265,7 +272,7 @@ input.au-input.au-input-xl{
 }
 
 .total{
-  background:#205b8d;
+  background: #045b85;
   line-height:43px;
   color:#fff;
   border-radius:30px;
