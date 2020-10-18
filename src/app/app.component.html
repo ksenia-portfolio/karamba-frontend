@@ -51,7 +51,6 @@
       <!-- Your account -->
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="/account"><span class="glyphicon glyphicon-user" style="color: black"></span><span style="color: black">Your Account</span></a></li>
-
       <!-- Cart -->
         <li>
           <app-cart-status></app-cart-status>
@@ -61,66 +60,10 @@
   </div>
 </nav>
 <!-- nav panel end-->
-
-<!-- SLIDES -->
-<br>
-<div class="row">
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-10">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="assets/images/slide/detroit.jpg" alt="Detroit Becomes Human">
-        </div>
-
-        <div class="item">
-          <img src="assets/images/slide/GTA5.jpg" alt="GTA5">
-        </div>
-
-        <div class="item">
-          <img src="assets/images/slide/need4speed.jpg" alt="Need For Speed">
-        </div>
-
-        <div class="item">
-          <img src="assets/images/slide/reddead2.png" alt="Red Dead Redemption 2">
-        </div>
-
-        <div class="item">
-          <img src="assets/images/slide/the-last-of-us.jpg" alt="The Last Of Us">
-        </div>
-
-        <div class="item">
-          <img src="assets/images/slide/watch-dogs-2.jpg" alt="Watch Dogs 2">
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <!-- end of slides-->
     <router-outlet></router-outlet>
     <br>
-  </div>
-</div>
-<footer class="container-fluid text-center" style="background: #50c0f3">
+<footer class="container-fluid text-center" style="background: #50c0f3; color: black; margin-top: 30%">
   <div><img src="favicon.ico"></div>
   <div>Copyright 2020 Karamba Game Store. All Rights Reserved.</div>
-
 </footer>
 

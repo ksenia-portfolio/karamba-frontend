@@ -32,6 +32,22 @@ export class CartService {
     this.computeCartTotals();
   }
 
+  removeFromCart(theCartItem: CartItem){
+    let alreadyExistsInCart = false;
+    let existingCartItem: CartItem;
+
+    if (this.cartItems.length > 0){
+
+      existingCartItem = this.cartItems.find(tempCartItem => tempCartItem.id === theCartItem.id);
+
+      alreadyExistsInCart = (existingCartItem !== undefined);
+    }
+    if (alreadyExistsInCart && existingCartItem.quantity > 1){
+      existingCartItem.quantity--;
+    }
+    this.computeCartTotals();
+  }
+
   computeCartTotals() {
     let totalPriceValue = 0;
     let totalQuantityValue = 0;
@@ -42,4 +58,11 @@ export class CartService {
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
   }
+
+ totalRemove(theCartItem: CartItem){
+   const itemIndex =  this.cartItems.findIndex(tempCartItem => tempCartItem.id === theCartItem.id);
+   if (itemIndex > -1){
+     this.cartItems.splice(itemIndex, 1);
+   }
+ }
 }

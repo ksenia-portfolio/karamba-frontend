@@ -1,6 +1,6 @@
 .high-light:hover{
   cursor: pointer;
-  border: #00ff00 3px solid;
+  border: #00d5fb 4px solid;
 }
 .detail-section{
   margin-top:60px;
@@ -705,16 +705,16 @@ select{
   margin:0
 }
 table.table.table-bordered{
-  border:1px solid #ccc;
+  border:1px transparent;
   background:#fff
 }
 .table-bordered td,.table-bordered th{
-  border:1px solid #dee2e6
+  border:1px transparent
 }
 table.table.table-bordered th{
-  BACKGROUND:#0da8e4;
-  color:#fff;
-  font-size:14px;
+  BACKGROUND: #1cafe9;
+  color: #000000;
+  font-size:17px;
   padding:7px
 }
 .table-responsive{

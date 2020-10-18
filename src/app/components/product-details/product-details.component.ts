@@ -34,8 +34,12 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  addToCart() {
-  const theCartItem = new CartItem(this.product);
+  addToCart(theProduct: Product) {
+  const theCartItem = new CartItem(theProduct);
   this.cartService.addToCart(theCartItem);
+  }
+  removeFromCart(theProduct: Product) {
+    const theCartItem = new CartItem(theProduct);
+    this.cartService.removeFromCart(theCartItem);
   }
 }

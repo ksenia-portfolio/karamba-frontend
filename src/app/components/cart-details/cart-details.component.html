@@ -2,7 +2,7 @@
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <div *ngIf="cartItems.length > 0">
-      <table class="table table-bordered">
+      <table class="table table-bordered" style="margin-top: -70px">
         <tr>
           <th width="20%">Image</th>
           <th width="50%">Details</th>
@@ -11,7 +11,7 @@
 
         <tr *ngFor="let tempCartItem of cartItems">
           <td>
-            <img src="{{tempCartItem.imageUrl}}" class="img-responsive" width="150px" style="padding: 10px; margin-left: 20%"/>
+            <img src="{{tempCartItem.imageUrl}}" class="img-responsive" width="150px" style="padding: 10px; margin-left: 1%"/>
           </td>
           <td>
             <p style="margin-left: 10px">{{tempCartItem.name}}</p>
@@ -19,22 +19,39 @@
           </td>
           <td>
             <div class = "items">
-              <label style="margin-left: 10px"> Quantity: </label>{{tempCartItem.quantity}}
+              <label style="margin-left: 10px"> Quantity:</label>
+              <span>
+              <div class="row no-gutters">
+                <div class="col">
+                  <a (click)="cartService.removeFromCart(tempCartItem)" class="btn btn-primary" style="margin-left: 5%; font: 20px bold; padding-left: 14px; padding-right: 14px"> - </a>
+                  <span style="padding-left: 15px"> {{tempCartItem.quantity}} </span>
+                  <a (click)="cartService.addToCart(tempCartItem)" class="btn btn-primary" style="margin-left: 5%; font: 20px bold"> + </a>
+                  <a (click)="cartService.totalRemove(tempCartItem)" class="btn btn-primary" style="margin-left: 5%; font: 20px bold"> Remove </a>
+                </div>
+              </div>
+            </span>
             </div>
-            <p class="mt-2" style="margin-left: 10px">Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'EUR'}}</p>
+            <br>
+            <p class="mt-2" style="margin-left: 10px"><strong>Subtotal: </strong>{{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'EUR'}}</p>
           </td>
+
+        </tr>
+        <tr><td><hr></td><td><hr></td><td><hr></td>
+
         </tr>
         <tr>
           <td colspan="2"></td>
           <td style="font-weight: bold">
             <p style="margin-left: 10px">Total Price: {{totalPrice | currency: 'EUR'}}</p>
-            <a routerLink="/checkout" class="btn btn-primary" style="margin-left: 10px">Checkout</a>
           </td>
         </tr>
-
       </table>
+        <div>
+          <br>
+          <a routerLink="/checkout" class="btn btn-primary" style="margin-left: 10px; margin-left: 92%">Checkout</a>
+       </div>
       </div>
-       <div *ngIf="cartItems.length==0" class="alert alert-info" style="text-align: center"><strong>Your cart is empty</strong>
+       <div *ngIf="cartItems.length==0" style="text-align: center; font-size: large"><strong>Your cart is empty</strong>
        </div>
 
     </div>
