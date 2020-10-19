@@ -2,7 +2,8 @@
 <img src="{{product.imageUrl}}" class="detail-img" style="margin: 20px 0">
   <h3>{{product.name}}</h3>
   <div class="detail-price">{{product.unitPrice | currency: 'EUR'}}</div>
-  <a (click)="removeFromCart(product)" class="btn btn-primary" style="margin-left: 5%; font: 20px bold; padding-left: 14px; padding-right: 14px"> - </a>
+  <br>
+  <a (click)="removeFromCart(product)" class="btn btn-primary" style="margin-left: 1%; font: 20px bold; padding-left: 14px; padding-right: 14px"> - </a>
   <a (click)="addToCart(product)" class="btn btn-primary" style="margin-left: 1%; font: 20px bold"> + </a>
   <hr>
   <h4>Description</h4>

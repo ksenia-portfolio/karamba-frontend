@@ -42,8 +42,10 @@ export class CartService {
 
       alreadyExistsInCart = (existingCartItem !== undefined);
     }
-    if (alreadyExistsInCart && existingCartItem.quantity > 1){
+    if (alreadyExistsInCart && existingCartItem.quantity > 0){
       existingCartItem.quantity--;
+    }else{
+      this.totalRemove(existingCartItem);
     }
     this.computeCartTotals();
   }
