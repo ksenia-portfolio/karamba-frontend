@@ -8,7 +8,6 @@ import {Customer} from '../common/customer';
 })
 export class CustomerService {
   private baseUrl = 'http://localhost:8080/customers';
-  private purchaseUrl = 'http://localhost:8080/purchase';
 
   constructor(private httpClient: HttpClient) {
   }
