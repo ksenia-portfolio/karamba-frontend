@@ -80,7 +80,7 @@ export class ProductListComponent implements OnInit {
     }
 
     // now get all the products for the given category id
-    this.productService.getProductListPaginate(this.thePageNumber -1,
+    this.productService.getProductListPaginate(this.thePageNumber -       1,
       this.thePageSize,
       this.currentCategoryId).subscribe(this.processResult());
   }
